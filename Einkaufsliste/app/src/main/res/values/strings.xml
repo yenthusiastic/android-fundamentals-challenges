@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Einkaufsliste</string>
+    <string name="item1">Milch</string>
+    <string name="item2">Eier</string>
+    <string name="item3">Brocolli</string>
+    <string name="item4">Zuchinni</string>
+    <string name="item5">Buschbohnen</string>
+    <string name="item6">Paprika</string>
+    <string name="item7">Käse</string>
+    <string name="item8">Tofu</string>
+    <string name="item9">Salat</string>
+    <string name="item10">Schnittblumen</string>
+    <string name="empty_text">List is empty. Please add items to list.</string>
+    <string name="warning">Maximum number of items reached. List cleared.</string>
+    <array name="all_items">Milch, Eier, Brocolli, Zuchinni, Buschbohnen</array>
+</resources>
