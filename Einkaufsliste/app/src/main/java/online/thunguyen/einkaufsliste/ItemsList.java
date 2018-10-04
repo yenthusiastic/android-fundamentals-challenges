@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 public class ItemsList extends AppCompatActivity {
@@ -16,10 +18,28 @@ public class ItemsList extends AppCompatActivity {
     public static final String EXTRA_ITEM =
             "online.thunguyen.einkaufsliste.extra.ITEM";
 
+    private String[] all_items;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items_list);
+        LinearLayout common_item_list = (LinearLayout) findViewById(R.id.common_item_list);
+        all_items = getResources().getStringArray(R.array.all_items);
+        for (int i = 0; i < all_items.length; i++){
+            // Add button
+            Button item_btn = new Button(this);
+            item_btn.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+            item_btn.setText(all_items[i]);
+            item_btn.setPadding(20, 20, 20, 20);// in pixels (left, top, right, bottom)
+            item_btn.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View selected_btn) {
+                    addItemToList(selected_btn);
+                }
+            });
+            common_item_list.addView(item_btn);
+        }
     }
 
     public void addItemToList(View view) {
